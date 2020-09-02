@@ -66,11 +66,7 @@ public final class ViewStore<State, Action>: ObservableObject {
   }
 
   /// The current state.
-  public private(set) var state: State {
-    willSet {
-      self.objectWillChange.send()
-    }
-  }
+  @Published public internal(set) var state: State
 
   let _send: (Action) -> Void
 
